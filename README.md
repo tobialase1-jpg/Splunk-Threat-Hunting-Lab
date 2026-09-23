@@ -49,6 +49,7 @@ The attacker was running a directory brute-force tool aggressively targeting the
 ---
 
 ## 📊 Visual Security Operations Centre (SOC) Dashboard
+![Splunk Dashboard Preview](dashboard_preview.png)
 I compiled these hunting queries into a visual XML-backed dashboard to assist security teams with real-time monitoring. The raw source code can be reviewed in the `joomla_attack_dashboard.xml` file in this repository.
 
 * **Top Attacker IP Addresses Panel:** Configured as a visual Bar Chart to immediately isolate high-volume request anomalies.
