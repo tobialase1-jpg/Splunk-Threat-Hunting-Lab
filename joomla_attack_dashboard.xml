@@ -1,0 +1,32 @@
+<dashboard version="1.1" theme="dark">
+  <label>Joomla Web Attack Analysis</label>
+  <description>Threat hunting overview for brute force activity targeting the administrative portal.</description>
+  <row>
+    <panel>
+      <title>Top Attacker IP Addresses</title>
+      <chart>
+        <search>
+          <query>index=botsv1 sourcetype=stream:http | stats count by src_ip | sort - count</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Targeted Web URIs</title>
+      <table>
+        <search>
+          <query>index=botsv1 sourcetype=stream:http | stats count by uri | sort - count</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="count">10</option>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
+    </panel>
+  </row>
+</dashboard>
